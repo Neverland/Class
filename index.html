@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>-=Class=-</title>
+	<script type="text/javascript" src="script/class.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+	var CS=Class(function(a,b,c,d){
+				this.a=a;
+				this.b=b;
+				this.c=c;
+			},
+			{
+				x:function(){console.log(this.m);return this; },
+				y:function(){console.log(this.a);return this;},
+				z:function(){console.log(this.n);return this;},
+				m:10,
+				n:20
+			}
+	);
+	var instance=new CS(11,12,13,14);
+	instance.x().y().z();
+</script>
+</body>
+</html>
