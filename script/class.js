@@ -14,11 +14,12 @@ function Class(init,attributes){
 	return function(){
 		var that=this,
 			indicator=arguments.callee,
-			slice=[].slice,
+			slice=[]å.slice,
 			args=slice.call(arguments,0),
 			ins=new factory(init,attributes),
 			pb,
 			i;
+		if(!(this instanceof indicator)) return ;
 		//这里的逻辑还没有处理好，创建实利必须使用new
 		//if(!(this instanceof indicator)){
 		//	return that=new indicator(args);
