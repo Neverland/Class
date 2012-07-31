@@ -1,7 +1,6 @@
 /*
  * Copyright 2012 enix
  * enix@foxmail.com
- * Includes toolkit lib
  * Date: 2012-7-31
  */
 
