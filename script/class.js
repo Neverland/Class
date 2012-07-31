@@ -19,10 +19,12 @@ function Class(init,attributes){
 			ins=new factory(init,attributes),
 			pb,
 			i;
+		//这里的逻辑还没有处理好，创建实利必须使用new
+		//if(!(this instanceof indicator)){
+		//	return that=new indicator(args);
+		//}
+		//
 
-		if(!(this instanceof indicator)){
-			return that=new indicator(args);
-		}
 		ins[0].apply(this, arguments);
 
 		pb=indicator.prototype;
