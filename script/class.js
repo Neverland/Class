@@ -26,9 +26,10 @@ function Class(init, attributes) {
 			ins = new factory(init, attributes),
 			pb,
 			i;
-		if (!(this instanceof indicator)) {
-			return that = new indicator(args);
-		}
+		//还没有妥善解决参数问题 所以创建实例时必须使用new关键字
+		//if (!(this instanceof indicator)) {
+		//	return that = new indicator(args);
+		//}
 		ins[0].apply(this, arguments);
 		pb = indicator.prototype;
 		pb.constructor = indicator;
