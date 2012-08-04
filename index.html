@@ -23,6 +23,15 @@
 	);
 	var instance=new CS(11,12,13,14);
 	instance.x().y().z();
+
+	//使用_get_可以获取原型上的方法，没有返回－1
+	instance._get_('y')().x();
+
+	//使用_set_可以向原型上添加方法
+	instance._set_('keys',function(){
+		console.log(Object.keys(instance)); // a, b, c
+	});
+	instance.keys();
 </script>
 </body>
 </html>
