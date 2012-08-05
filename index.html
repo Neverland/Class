@@ -9,29 +9,34 @@
 <body>
 <script type="text/javascript">
 	var CS=Class(function(a,b,c,d){
-				this.a=a;
-				this.b=b;
-				this.c=c;
-			},
-			{
-				x:function(){console.log(this.m);return this; },
-				y:function(){console.log(this.a);return this;},
-				z:function(){console.log(this.n);return this;},
-				m:10,
-				n:20
-			}
+			this.a=a|| 100;
+			this.b=b|| 101;
+			this.c=c|| 102;
+		},
+		{
+			x:function(){console.log(this.b);return this; },
+			y:function(){console.log(this.a);return this;},
+			z:function(){console.log(this.c);return this;},
+			m:10,
+			n:20
+		}
 	);
-	var instance=new CS(11,12,13,14);
-	instance.x().y().z();
+	var ins1=CS(11,12,13,14);
+	//var instance=new CS(11,12,13,14);
+	ins1.x().y().z();
 
-	//使用_get_可以获取原型上的方法，没有返回－1
-	instance._get_('y')().x();
+	//使用_get_可以获取实例上的方法，没有返回－1
+	ins1._get_('y')();
 
-	//使用_set_可以向原型上添加方法
-	instance._set_('keys',function(){
-		console.log(Object.keys(instance)); // a, b, c
+	//使用_set_可以向实例上添加方法
+	ins1._set_('keys',function(){
+		console.log(Object.keys(this)); // a, b, c
 	});
-	instance.keys();
+	ins1.keys();
+
+	var ins2=CS();
+	ins2.x().y().z();
+
 </script>
 </body>
 </html>
