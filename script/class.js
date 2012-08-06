@@ -31,6 +31,9 @@ function Class(init, attributes) {
 		* 下面几行代码用于，不使用new运算符产生类实例
 		* 代码不是很优雅但可以保证功能
 		*
+		* 优雅代码：return new indicator(...arguments);
+		* ecma6的 spread 语法 ... 拭目以待es6公布
+		*
 		* */
 		indicator.fake;
  		if (!(that instanceof indicator) && that===window) {
