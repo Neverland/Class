@@ -67,7 +67,11 @@ function Class(init, attributes) {
 				}();
 			}
 		}
+
+
 		ins[0].apply(this, arguments);
+
+
 		pb._get_ || (
 			pb._get_ = function (key) {
 				var attr = this[key]
