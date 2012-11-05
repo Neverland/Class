@@ -2,11 +2,12 @@
  * Copyright 2012 enix
  * enix@foxmail.com
  * Date: 2012-7-31
+ * last Modified: 2012-11-5
  */
 function Class(init, attributes) {
 	var klass = arguments.callee, that = this;
 
-	klass.factory ||(klass.factory=function(i, a) {
+	klass.factory || (klass.factory=function(i, a) {
 		a || (a = {});
 		a.toString() === '[object Object]' ? a : {};
 		return [
@@ -27,16 +28,17 @@ function Class(init, attributes) {
 
 
 		/*
-		*
-		* 下面几行代码用于，不使用new运算符产生类实例
-		* 代码不是很优雅但可以保证功能
-		*
-		* 优雅代码：return new indicator(...arguments);
-		* ecma6的 spread 语法 ... 拭目以待es6公布
-		*
-		* */
+		 *
+		 * 下面几行代码用于，不使用new运算符产生类实例
+		 * 代码不是很优雅但可以保证功能
+		 *
+		 * 优雅代码：return new indicator(...arguments);
+		 * ecma6的 spread 语法 ... 拭目以待es6公布
+		 *
+		 * */
 		indicator.fake;
- 		if (!(that instanceof indicator) && that===window) {
+
+		if (!(that instanceof indicator) && that===window) {
 			indicator.fake=true;
 			return indicator.apply(new indicator(),args);
 		}
@@ -45,9 +47,12 @@ function Class(init, attributes) {
 			return that;
 		}
 		//
-		ins[0].apply(this, arguments);
+
 		pb = indicator.prototype;
 		pb.constructor = indicator;
+
+
+
 		for (i in ins[1]) {
 			if (ins[1].hasOwnProperty(i) && !pb[i]) {
 				pb[i] = function () {
@@ -62,6 +67,7 @@ function Class(init, attributes) {
 				}();
 			}
 		}
+		ins[0].apply(this, arguments);
 		pb._get_ || (
 			pb._get_ = function (key) {
 				var attr = this[key]
