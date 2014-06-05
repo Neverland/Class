@@ -1,4 +1,5 @@
-/*
+/**
+ * @license
  * Copyright 2012 enix
  * enix@foxmail.com
  * Date: 2012-7-31
