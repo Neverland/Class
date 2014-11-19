@@ -1,0 +1,12 @@
+{
+    "name": "Class",
+    "version": "1.0.0",
+    "contributors": [
+        {
+            "name": "ienix",
+            "email": "enix@foxmail.com"
+        }
+    ],
+    "description": "Class是一个动态原型js类型定义辅助方法！",
+    "homepage": "https://github.com/Neverland/Class"
+}
