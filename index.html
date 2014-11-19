@@ -3,25 +3,34 @@
 <html>
 <head>
 	<title>-=Class=-</title>
-	<script type="text/javascript" src="script/class.js"></script>
+	<script type="text/javascript" src="src/1.0.1/class.js"></script>
 
 </head>
 <body>
 <script type="text/javascript">
-	var CS=Class(function(a,b,c,d){
-			this.a=a|| 100;
-			this.b=b|| 101;
-			this.c=c|| 102;
-		},
-		{
-			x:function(){console.log(this.b);return this; },
-			y:function(){console.log(this.a);return this;},
-			z:function(){console.log(this.c);return this;},
-			m:10,
-			n:20
-		}
+	var CS = Class(function (a, b, c, d) {
+				this.a = a || 100;
+				this.b = b || 101;
+				this.c = c || 102;
+			},
+			{
+				x: function () {
+					console.log(this.b);
+					return this;
+				},
+				y: function () {
+					console.log(this.a);
+					return this;
+				},
+				z: function () {
+					console.log(this.c);
+					return this;
+				},
+				m: 10,
+				n: 20
+			}
 	);
-	var ins1=CS(11,12,13,14);
+	var ins1 = CS(11, 12, 13, 14);
 	//var instance=new CS(11,12,13,14);
 	ins1.x().y().z();
 
@@ -29,12 +38,12 @@
 	ins1._get_('y')();
 
 	//使用_set_可以向实例上添加方法
-	ins1._set_('keys',function(){
+	ins1._set_('keys', function () {
 		console.log(Object.keys(this)); // a, b, c
 	});
 	ins1.keys();
 
-	var ins2=CS();
+	var ins2 = CS();
 	ins2.x().y().z();
 
 </script>
