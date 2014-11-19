@@ -3,6 +3,7 @@
  * Copyright 2012 enix
  * enix@foxmail.com
  * Date: 2012-7-31
+ * version: 1.0.1
  * last Modified: 2014-06-01
  */
 
@@ -94,4 +95,5 @@
 		window.Class || (window.Class = Class)
 	}
 
+	return Class
 }();
